@@ -63,7 +63,6 @@ public class Consulta extends JFrame {
         container.add(nombres);
         container.add(apellidos);
         container.add(edad);
-        container.add(universidad);
         container.add(si);
         container.add(no);
         container.add(buscar);
@@ -150,6 +149,12 @@ public class Consulta extends JFrame {
                         return String.class;
                     case 2:
                         return String.class;
+                    case 3:
+                        return String.class;
+                    case 4:
+                        return String.class;
+                    case 5:
+                        return String.class;
                     default:
                         return Boolean.class;
                 }
@@ -181,8 +186,7 @@ public class Consulta extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 InscripcionesDao fd = new InscripcionesDao();
-                Inscripciones f = new Inscripciones(carnet.getText(),Integer.parseInt(edad.getText()),nombres.getText(),apellidos.getText(),universidad.getSelectedItem().toString(),
-                true);
+                Inscripciones f = new Inscripciones(carnet.getText(),Integer.parseInt(edad.getText()),nombres.getText(),apellidos.getText(),universidad.getSelectedItem().toString(),true);
                 //int edad, String nombres, String apellidos, String universidad
                 if(no.isSelected()){
                     f.setExistencia(false);
