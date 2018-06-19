@@ -5,6 +5,8 @@
  */
 package cortopoo;
 
+import vista.Consulta;
+
 /**
  *
  * @author LN710Q
@@ -16,6 +18,8 @@ public class CortoPOO {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        Consulta consult = new Consulta();
+        consult.setVisible(true);
     }
     
 }
