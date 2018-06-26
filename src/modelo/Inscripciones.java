@@ -33,12 +33,12 @@ public class Inscripciones {
         this.existencia = existencia;
     }
 
-    public Inscripciones(String nombres, String apellidos, String universidad, boolean existencia) {
-        this.nombres = nombres;
-        this.apellidos = apellidos;
-        this.universidad = universidad;
-        this.existencia = existencia;
-    }
+//    public Inscripciones(String nombres, String apellidos, String universidad, boolean existencia) {
+//        this.nombres = nombres;
+//        this.apellidos = apellidos;
+//        this.universidad = universidad;
+//        this.existencia = existencia;
+//    }
 
     public String getCarnet() {
         return carnet;

@@ -126,7 +126,7 @@ public class InscripcionesDao implements metodos<Inscripciones>{
             s = con.getCnx().prepareStatement(SQL_READALL);
             rs = s.executeQuery(SQL_READALL);
             while(rs.next()){
-                all.add(new Inscripciones(rs.getString(1),rs.getInt(2),rs.getString(3),rs.getString(4),rs.getString(5),rs.getBoolean(6)));
+                all.add(new Inscripciones(rs.getString("carnet"),rs.getInt("edad"),rs.getString("nombres"),rs.getString("apellidos"),rs.getString("universidad"),rs.getBoolean("estado")));
             }
             rs.close();
         }catch (SQLException ex){

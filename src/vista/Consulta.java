@@ -46,7 +46,7 @@ public class Consulta extends JFrame {
     DefaultTableModel tm;
     
     public Consulta(){
-        super("Inventario");
+        super("CortoPOO");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(null);
         agregarLabels();
@@ -63,6 +63,7 @@ public class Consulta extends JFrame {
         container.add(nombres);
         container.add(apellidos);
         container.add(edad);
+        container.add(universidad);
         container.add(si);
         container.add(no);
         container.add(buscar);
@@ -153,8 +154,7 @@ public class Consulta extends JFrame {
                         return String.class;
                     case 4:
                         return String.class;
-                    case 5:
-                        return String.class;
+                    
                     default:
                         return Boolean.class;
                 }
@@ -173,6 +173,7 @@ public class Consulta extends JFrame {
         //Agregamos el resultado a nuestro JTable
         //se agregan de tipo Object
         for (Inscripciones fi: inscripciones){
+           //System.out.println(fi.toString());
             tm.addRow(new Object[]{fi.getCarnet(),fi.getNombres(),fi.getApellidos(),fi.getEdad(),fi.getUniversidad(),fi.getExistencia()});
             
         }
@@ -212,12 +213,12 @@ public class Consulta extends JFrame {
                 if(no.isSelected()){
                     f.setExistencia(false);
                 }
-                if(fd.create(f)){
-                    JOptionPane.showMessageDialog(null, "Inscripcion registrada con exito");
+                if(fd.update(f)){
+                    JOptionPane.showMessageDialog(null, "Inscripcion modificada con exito");
                     limpiarCampos();
                     llenarTabla();
                 }else{
-                    JOptionPane.showMessageDialog(null,"Ocurrio un problema al momento de hacer lña inscripcion");
+                    JOptionPane.showMessageDialog(null,"Ocurrio un problema al momento de modificar la inscripcion");
                 }
             }
             
